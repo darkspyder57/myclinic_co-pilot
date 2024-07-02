@@ -8,6 +8,7 @@ import '@/public/assets/vendor/remixicon/remixicon.css'
 import '@/public/assets/vendor/swiper/swiper-bundle.min.css'
 import BootstrapClient from './BoostrapClient'
 
+
 // <!-- Template Main CSS File -->
 import '@/public/assets/css/style.css'
 import Script from 'next/script'
@@ -23,13 +24,13 @@ export default function RootLayout({ children }) {
       <body>
         {children}
         <BootstrapClient />
-        <Script src='@/public/assets/vendor/aos/aos.js'></Script>
-        <Script src='@/public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'></Script>
-        <Script src='@/public/assets/vendor/glightbox/js/glightbox.min.js'></Script>
-        <Script src='@/public/assets/vendor/isotope-layout/isotope.pkgd.min.js'></Script>
-        <Script src='@/public/assets/vendor/swiper/swiper-bundle.min.js'></Script>
+        <Script src="assets/vendor/aos/aos.js" />
+        <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" />
+        <Script src="assets/vendor/glightbox/js/glightbox.min.js" />
+        <Script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" />
+        <Script src="assets/vendor/swiper/swiper-bundle.min.js" />
         {/* <!-- Template Main JS File --> */}
-        <Script src='@/public/assets/js/main.js'></Script>
+        <Script src="assets/js/main.js" />
       </body>
 
     </html>
