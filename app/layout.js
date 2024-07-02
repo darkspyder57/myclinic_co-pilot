@@ -1,7 +1,16 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
+import '@/public/assets/vendor/animate.css/animate.min.css'
+import '@/public/assets/vendor/aos/aos.css'
+import '@/public/assets/vendor/bootstrap/css/bootstrap.min.css'
+import '@/public/assets/vendor/bootstrap-icons/bootstrap-icons.css'
+import '@/public/assets/vendor/boxicons/css/boxicons.min.css'
+import '@/public/assets/vendor/glightbox/css/glightbox.min.css'
+import '@/public/assets/vendor/remixicon/remixicon.css'
+import '@/public/assets/vendor/swiper/swiper-bundle.min.css'
+import BootstrapClient from './BoostrapClient'
 
-const inter = Inter({ subsets: ["latin"] });
+// <!-- Template Main CSS File -->
+import '@/public/assets/css/style.css'
+import Script from 'next/script'
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +20,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        {children}
+        <BootstrapClient />
+        <Script src='@/public/assets/vendor/aos/aos.js'></Script>
+        <Script src='@/public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'></Script>
+        <Script src='@/public/assets/vendor/glightbox/js/glightbox.min.js'></Script>
+        <Script src='@/public/assets/vendor/isotope-layout/isotope.pkgd.min.js'></Script>
+        <Script src='@/public/assets/vendor/swiper/swiper-bundle.min.js'></Script>
+        {/* <!-- Template Main JS File --> */}
+        <Script src='@/public/assets/js/main.js'></Script>
+      </body>
+
     </html>
   );
 }
