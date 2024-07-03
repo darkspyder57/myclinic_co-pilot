@@ -1449,6 +1449,10 @@ section {
   background: #fc8129;
 }
 
+#submitButton.success {
+  background-color: rgb(13, 225, 13);
+}
+
 @keyframes animate-loading {
   0% {
     transform: rotate(0deg);

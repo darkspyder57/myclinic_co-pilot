@@ -2,23 +2,23 @@
 
 import { db } from "@/app/Firebase"
 import { collection, addDoc } from "firebase/firestore"
-import React,{useState} from "react"
+import React, { useState } from "react"
 
 
-async function addDataToFirestore(name, email, subject, message){
-    try{
-        const docRef = await addDoc(collection(db,"contact"),
-    {
-        name: name,
-        email: email,
-        subject: subject,
-        message: message
-    });
-    console.log("Document written with ID: ",docRef.id);
-    return true;
+async function addDataToFirestore(name, email, subject, message) {
+    try {
+        const docRef = await addDoc(collection(db, "contact"),
+            {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            });
+        console.log("Document written with ID: ", docRef.id);
+        return true;
     }
-    catch(error){
-        console.log("Error adding document ",error);
+    catch (error) {
+        console.log("Error adding document ", error);
         return false;
     }
 }
@@ -30,16 +30,19 @@ export default function Contact() {
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
 
-    const handleSubmit = async(e)=>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const added = await addDataToFirestore(name,email,subject,message);
+        const added = await addDataToFirestore(name, email, subject, message);
 
-        if(added){
+        if (added) {
             setName("");
             setEmail("");
             setSubject("");
             setMessage("");
-            alert("Data added to firestore");
+            // alert("Data added to firestore");
+            const submitButton = document.getElementById('submitButton');
+            submitButton.textContent = 'Data Stored Successfully';
+            submitButton.classList.add('success');
         }
     }
 
@@ -84,24 +87,26 @@ export default function Contact() {
                         <form className="php-email-form" onSubmit={handleSubmit}>
                             <div className="row">
                                 <div className="col-md-6 form-group">
-                                    <input type="text" value={name} name="name" className="form-control" id="name" placeholder="Your Name" required onChange={(e)=>setName(e.target.value)}/>
+                                    <input type="text" value={name} name="name" className="form-control" id="name" placeholder="Your Name" required onChange={(e) => setName(e.target.value)} />
                                 </div>
                                 <div className="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" value={email} className="form-control" name="email" id="email" placeholder="Your Email" required onChange={(e)=>setEmail(e.target.value)}/>
+                                    <input type="email" value={email} className="form-control" name="email" id="email" placeholder="Your Email" required onChange={(e) => setEmail(e.target.value)} />
                                 </div>
                             </div>
                             <div className="form-group mt-3">
-                                <input type="text" value={subject} className="form-control" name="subject" id="subject" placeholder="Subject" required onChange={(e)=>setSubject(e.target.value)}/>
+                                <input type="text" value={subject} className="form-control" name="subject" id="subject" placeholder="Subject" required onChange={(e) => setSubject(e.target.value)} />
                             </div>
                             <div className="form-group mt-3">
-                                <textarea value={message} className="form-control" name="message" rows="5" placeholder="Message" required onChange={(e)=>setMessage(e.target.value)}></textarea>
+                                <textarea value={message} className="form-control" name="message" rows="5" placeholder="Message" required onChange={(e) => setMessage(e.target.value)}></textarea>
                             </div>
                             <div className="my-3">
                                 <div className="loading">Loading</div>
                                 <div className="error-message"></div>
                                 <div className="sent-message">Your message has been sent. Thank you!</div>
                             </div>
-                            <div className="text-center"><button type="submit">Send Message</button></div>
+                            <div className="text-center">
+                                <button type="submit" id="submitButton">Send Message</button>
+                            </div>
                         </form>
 
                     </div>
