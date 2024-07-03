@@ -7,6 +7,7 @@ import '@/public/assets/vendor/glightbox/css/glightbox.min.css'
 import '@/public/assets/vendor/remixicon/remixicon.css'
 import '@/public/assets/vendor/swiper/swiper-bundle.min.css'
 import BootstrapClient from './BoostrapClient'
+import {Open_Sans, Raleway} from 'next/font/google'
 
 
 // <!-- Template Main CSS File -->
@@ -26,9 +27,17 @@ export const metadata = {
   }
 };
 
+const opensans = Open_Sans({ subsets: ['latin'], weight: ['300', '400', '600', '700'] });
+const raleway = Raleway({
+  subsets: ['latin'],
+  weight: ['300','400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+});
+
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={'${opensans.className}${raleway.className}'}>
       <body>
         {children}
         <BootstrapClient />
@@ -40,7 +49,6 @@ export default function RootLayout({ children }) {
         {/* <!-- Template Main JS File --> */}
         <Script src="assets/js/main.js" />
       </body>
-
     </html>
   );
 }

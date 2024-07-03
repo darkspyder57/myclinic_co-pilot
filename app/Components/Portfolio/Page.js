@@ -1,20 +1,4 @@
-"use client"
-
-// import glightbox from '@/public/assets/vendor/glightbox/js/glightbox';
-// import '@/public/assets/vendor/glightbox/js/glightbox.min.js'
-// import '@/public/assets/vendor/glightbox/css/glightbox.min.css'
-// import { useEffect } from "react";
-
-export default function Portfolio() {
-    // useEffect(() => {
-    //     const portfolioLightbox = glightbox({
-    //         selector: '.portfolio-lightbox'
-    //     });
-
-    //     return () => {
-    //         portfolioLightbox.destroy()
-    //     }
-    // });
+export default function Portfolio() {    
     return (
         // <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" className="portfolio">

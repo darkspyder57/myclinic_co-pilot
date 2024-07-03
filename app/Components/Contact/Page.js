@@ -1,4 +1,48 @@
+"use client"
+
+import { db } from "@/app/Firebase"
+import { collection, addDoc } from "firebase/firestore"
+import React,{useState} from "react"
+
+
+async function addDataToFirestore(name, email, subject, message){
+    try{
+        const docRef = await addDoc(collection(db,"contact"),
+    {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message
+    });
+    console.log("Document written with ID: ",docRef.id);
+    return true;
+    }
+    catch(error){
+        console.log("Error adding document ",error);
+        return false;
+    }
+}
+
+
 export default function Contact() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
+
+    const handleSubmit = async(e)=>{
+        e.preventDefault();
+        const added = await addDataToFirestore(name,email,subject,message);
+
+        if(added){
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
+            alert("Data added to firestore");
+        }
+    }
+
     return (
         // <!-- ======= Contact Section ======= -->
         <section id="contact" className="contact">
@@ -37,20 +81,20 @@ export default function Contact() {
 
                     <div className="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
 
-                        <form action="forms/contact.php" method="post" role="form" className="php-email-form">
+                        <form className="php-email-form" onSubmit={handleSubmit}>
                             <div className="row">
                                 <div className="col-md-6 form-group">
-                                    <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" required />
+                                    <input type="text" value={name} name="name" className="form-control" id="name" placeholder="Your Name" required onChange={(e)=>setName(e.target.value)}/>
                                 </div>
                                 <div className="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" className="form-control" name="email" id="email" placeholder="Your Email" required />
+                                    <input type="email" value={email} className="form-control" name="email" id="email" placeholder="Your Email" required onChange={(e)=>setEmail(e.target.value)}/>
                                 </div>
                             </div>
                             <div className="form-group mt-3">
-                                <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" required />
+                                <input type="text" value={subject} className="form-control" name="subject" id="subject" placeholder="Subject" required onChange={(e)=>setSubject(e.target.value)}/>
                             </div>
                             <div className="form-group mt-3">
-                                <textarea className="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                                <textarea value={message} className="form-control" name="message" rows="5" placeholder="Message" required onChange={(e)=>setMessage(e.target.value)}></textarea>
                             </div>
                             <div className="my-3">
                                 <div className="loading">Loading</div>
