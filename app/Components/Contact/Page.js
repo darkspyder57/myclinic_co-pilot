@@ -2,7 +2,7 @@
 
 import { db } from "@/app/Firebase"
 import { collection, addDoc } from "firebase/firestore"
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 
 
 async function addDataToFirestore(name, email, subject, message) {
@@ -29,6 +29,16 @@ export default function Contact() {
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
+    const timeoutRef = useRef(null);
+
+    useEffect(() => {
+        // Clean up timeout on component unmount
+        return () => {
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+          }
+        };
+      }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -44,7 +54,7 @@ export default function Contact() {
             submitButton.textContent = 'Data Stored Successfully';
             submitButton.classList.add('success');
 
-            setTimeout(() => {
+            timeoutRef.current = setTimeout(() => {
                 submitButton.textContent = 'Send Message';
                 submitButton.classList.remove('success');
               }, 2000);
