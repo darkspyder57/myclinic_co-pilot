@@ -39,10 +39,15 @@ export default function Contact() {
             setEmail("");
             setSubject("");
             setMessage("");
-            // alert("Data added to firestore");
+            // alert("Data added to firestore");    
             const submitButton = document.getElementById('submitButton');
             submitButton.textContent = 'Data Stored Successfully';
             submitButton.classList.add('success');
+
+            setTimeout(() => {
+                submitButton.textContent = 'Send Message';
+                submitButton.classList.remove('success');
+              }, 2000);
         }
     }
 
