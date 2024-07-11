@@ -1,28 +1,6 @@
 "use client"
 
-import { db } from "@/app/Firebase"
-import { collection, addDoc } from "firebase/firestore"
 import React, { useState, useEffect, useRef } from "react"
-
-
-async function addDataToFirestore(name, email, subject, message) {
-    try {
-        const docRef = await addDoc(collection(db, "contact"),
-            {
-                name: name,
-                email: email,
-                subject: subject,
-                message: message
-            });
-        console.log("Document written with ID: ", docRef.id);
-        return true;
-    }
-    catch (error) {
-        console.log("Error adding document ", error);
-        return false;
-    }
-}
-
 
 export default function Contact() {
     const [name, setName] = useState("");
@@ -34,32 +12,51 @@ export default function Contact() {
     useEffect(() => {
         // Clean up timeout on component unmount
         return () => {
-          if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-          }
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
         };
-      }, []);
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const added = await addDataToFirestore(name, email, subject, message);
+        try {
+            const response = await fetch("api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ name, email, subject, message }),
+            });
 
-        if (added) {
-            setName("");
-            setEmail("");
-            setSubject("");
-            setMessage("");
-            // alert("Data added to firestore");    
-            const submitButton = document.getElementById('submitButton');
-            submitButton.textContent = 'Data Stored Successfully';
-            submitButton.classList.add('success');
+            if (response.ok) {
+                setName("");
+                setEmail("");
+                setSubject("");
+                setMessage("");
 
-            timeoutRef.current = setTimeout(() => {
-                submitButton.textContent = 'Send Message';
-                submitButton.classList.remove('success');
-              }, 2000);
+                const submitButton = document.getElementById('submitButton');
+                submitButton.textContent = 'Data Stored Successfully';
+                submitButton.classList.add('success');
+
+                timeoutRef.current = setTimeout(() => {
+                    submitButton.textContent = 'Send Message';
+                    submitButton.classList.remove('success');
+                }, 2000);
+                console.log({
+                    name:name,
+                    email: email,
+                    subject: subject,
+                    message: message
+                });
+            }
+            else{
+                alert("Error");
+            }
+        } catch (error) {
+            console.log(error);
         }
-    }
+    };
 
     return (
         // <!-- ======= Contact Section ======= -->

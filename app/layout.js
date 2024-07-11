@@ -6,7 +6,7 @@ import '@/public/assets/vendor/boxicons/css/boxicons.min.css'
 import '@/public/assets/vendor/glightbox/css/glightbox.min.css'
 import '@/public/assets/vendor/remixicon/remixicon.css'
 import '@/public/assets/vendor/swiper/swiper-bundle.min.css'
-import BootstrapClient from './BoostrapClient'
+// import BootstrapClient from './BoostrapClient'
 import {Open_Sans, Raleway} from 'next/font/google'
 
 
@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={'${opensans.className}${raleway.className}'}>
       <body>
         {children}
-        <BootstrapClient />
+        {/* <BootstrapClient /> */}
         <Script src="assets/vendor/aos/aos.js" />
         <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" />
         <Script src="assets/vendor/glightbox/js/glightbox.min.js" />
