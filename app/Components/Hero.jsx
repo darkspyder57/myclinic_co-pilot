@@ -7,27 +7,18 @@ export default function Hero() {
                 {/* <!-- Slide 1 --> */}
                 <div className="carousel-item active">
                     <div className="carousel-container">
-                        <h2 className="animate__animated animate__fadeInDown">Welcome to <span>Selecao</span></h2>
-                        <p className="animate__animated fanimate__adeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                        <a href="#about" className="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                        <h2 className="animate__animated animate__fadeInDown">Welcome to <span>MyClinicCopilot</span></h2>
+                        <p className="animate__animated fanimate__adeInUp">Do you eat a five course meal with each course served at different restaurants, or at the same restaurant?<br /> No reason your marketing should be handled by 5 different vendors, we deliver integrative digital marketing for you...</p>
+                        <a href="#about1" className="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
                     </div>
                 </div>
 
                 {/* <!-- Slide 2 --> */}
                 <div className="carousel-item">
                     <div className="carousel-container">
-                        <h2 className="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-                        <p className="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                        <a href="#about" className="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-                    </div>
-                </div>
-
-                {/* <!-- Slide 3 --> */}
-                <div className="carousel-item">
-                    <div className="carousel-container">
-                        <h2 className="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                        <p className="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                        <a href="#about" className="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                        <h2 className="animate__animated animate__fadeInDown">Why US?</h2>
+                        <p className="animate__animated animate__fadeInUp">We are one of the few AI-enabled integrated digital marketing service providers, combining cutting-edge practices with extensive experience to deliver exceptional results...</p>
+                        <a href="#about2" className="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
                     </div>
                 </div>
 
@@ -55,8 +46,8 @@ export default function Hero() {
                     <use xlinkHref="#wave-path" x="50" y="9" fill="#fff" />
                 </g>
             </svg>
-            {/* <!-- End Hero --> */ }
+            {/* <!-- End Hero --> */}
         </section>
-  
+
     )
 }

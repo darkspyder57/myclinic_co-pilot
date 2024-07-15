@@ -13,6 +13,9 @@ import {Open_Sans, Raleway} from 'next/font/google'
 // <!-- Template Main CSS File -->
 import '@/public/assets/css/style.css'
 import Script from 'next/script'
+import Header from './Components/Header.jsx'
+import Footer from './Components/Footer.jsx'
+import BackToTop from './Components/BackToTop.jsx'
 
 export const metadata = {
   title: "Selecao Bootstrap Template - Index",
@@ -37,17 +40,20 @@ const raleway = Raleway({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={'${opensans.className}${raleway.className}'}>
+    <html lang="en" className={`${opensans.className}${raleway.className}`}>
       <body>
+        <Header />
         {children}
+        <Footer />
+        <BackToTop />
         {/* <BootstrapClient /> */}
         <Script src="assets/vendor/aos/aos.js" />
-        <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" />
+        <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" strategy='beforeInteractive'/>
         <Script src="assets/vendor/glightbox/js/glightbox.min.js" />
         <Script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" />
         <Script src="assets/vendor/swiper/swiper-bundle.min.js" />
         {/* <!-- Template Main JS File --> */}
-        <Script src="assets/js/main.js" />
+        <Script src="assets/js/main.js" strategy='beforeInteractive'/>
       </body>
     </html>
   );
