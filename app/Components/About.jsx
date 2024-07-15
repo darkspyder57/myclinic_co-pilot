@@ -25,12 +25,12 @@ export default function About() {
                                 </strong>
                                 <br />
                                 <br />
-                                At MyCliniCoPilot, we recognize that doctors are busy professionals focused on providing excellent care. That's why we offer comprehensive, managed digital marketing services tailored specifically for healthcare practices. Using cutting-edge tools and strategies, we help you grow your practice seamlessly without adding to your workload.
+                                At MyCliniCoPilot, we recognize that doctors are busy professionals focused on providing excellent care. That&apos;s why we offer comprehensive, managed digital marketing services tailored specifically for healthcare practices. Using cutting-edge tools and strategies, we help you grow your practice seamlessly without adding to your workload.
                             </p>
                         </div>
                         <div className="col-lg-6 pt-4 pt-lg-0">
                             <p>
-                                Our services include integrated solutions or, if preferred, individual customised services such as website upgrades, SEO, SEM, social media marketing, and data-driven direct marketing practices. Partner with us to experience a significant boost in your practice's visibility, patient retention, and overall growth.
+                                Our services include integrated solutions or, if preferred, individual customised services such as website upgrades, SEO, SEM, social media marketing, and data-driven direct marketing practices. Partner with us to experience a significant boost in your practice&apos;s visibility, patient retention, and overall growth.
                             </p>
                         </div>
                     </div>
@@ -64,7 +64,7 @@ export default function About() {
                         </div>
                         <div className="col-lg-6 pt-4 pt-lg-0">
                             <p>
-                            Our services include AI-powered SEO, social media marketing, targeted email campaigns, and data-driven patient acquisition strategies. Partner with us to experience a significant boost in your practice's visibility, patient retention, and overall growth.
+                            Our services include AI-powered SEO, social media marketing, targeted email campaigns, and data-driven patient acquisition strategies. Partner with us to experience a significant boost in your practice&apos;s visibility, patient retention, and overall growth.
                             </p>
                         </div>
                     </div>

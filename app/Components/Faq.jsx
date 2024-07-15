@@ -96,7 +96,7 @@ export default function Faq() {
             <div data-bs-toggle="collapse" href="#faq10" className="collapsed question">How can I get started with MyCliniCoPilot? <i className="bi bi-chevron-down icon-show"></i><i className="bi bi-chevron-up icon-close"></i></div>
             <div id="faq10" className="collapse" data-bs-parent=".faq-list">
               <p>
-              To get started with our services, simply contact us through our website or customer service. We'll work with you to understand your practice's needs and tailor our digital marketing solutions accordingly.
+              To get started with our services, simply contact us through our website or customer service. We&apos;ll work with you to understand your practice&apos;s needs and tailor our digital marketing solutions accordingly.
               </p>
             </div>
           </li>

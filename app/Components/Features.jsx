@@ -62,7 +62,7 @@ export default function Features() {
                             <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                 <h3>Social Media Management</h3>
                                 <p className="fst-italic">
-                                Enhance your dental practice&apos;s online presence with our Social Media Management services. In today's digital age, social media AI algorithms prioritize engaging and interesting content over merely expanding your network. Effective community management is equally crucial to foster meaningful connections and drive engagement.
+                                Enhance your dental practice&apos;s online presence with our Social Media Management services. In today&apos;s digital age, social media AI algorithms prioritize engaging and interesting content over merely expanding your network. Effective community management is equally crucial to foster meaningful connections and drive engagement.
                                 </p>
                                 <ul>
                                     <li><i className="ri-check-double-line"></i> <strong>AI-Driven Content Creation:</strong> We utilize advanced AI tools to generate captivating social media posts that resonate with your audience, boosting interaction and visibility.</li>
