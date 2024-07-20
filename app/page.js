@@ -11,6 +11,9 @@ import Faq from "./Components/Faq.jsx";
 import Team from "./Components/Team.jsx";
 import Contact from "./Components/Contact.jsx";
 // import { AuthProvider } from "./context/AuthContext.jsx";
+import BackToTop from "./Components/BackToTop.jsx";
+import Header from "./Components/Header.jsx";
+import Footer from "./Components/Footer.jsx";
 
 
 export default function Home() {
@@ -21,9 +24,10 @@ export default function Home() {
     <>
 
     {/* <Header /> */}
+    {/* <AuthProvider> */}
+    <Header />
     <Hero />
     <main id="main">
-      {/* <AuthProvider> */}
       <About />
       <Features />
       <Cta />
@@ -31,8 +35,10 @@ export default function Home() {
       <Faq />
       <Team />
       <Contact />
-      {/* </AuthProvider> */}
     </main>
+    <Footer />
+    <BackToTop />
+    {/* </AuthProvider> */}
     {/* <Footer /> */}
     {/* <BackToTop /> */}
     </>
