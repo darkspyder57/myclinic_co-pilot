@@ -6,7 +6,7 @@ import Hero from "./Components/Hero.jsx";
 import { useEffect } from "react";
 import aos from "@/public/assets/vendor/aos/aos.js";
 import Cta from "./Components/Cta.jsx";
-import Pricing from "./Components/Pricing.jsx";
+// import Pricing from "./Components/Pricing.jsx";
 import Faq from "./Components/Faq.jsx";
 import Team from "./Components/Team.jsx";
 import Contact from "./Components/Contact.jsx";
@@ -31,7 +31,7 @@ export default function Home() {
       <About />
       <Features />
       <Cta />
-      <Pricing />
+      {/* <Pricing /> */}
       <Faq />
       <Team />
       <Contact />

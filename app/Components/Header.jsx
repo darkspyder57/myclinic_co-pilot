@@ -111,7 +111,8 @@ export default function Header() {
     <header id="header" className="fixed-top d-flex align-items-center header-transparent">
       <div className="container d-flex align-items-center justify-content-between">
         <div className="logo">
-          <h1><Link href="/" legacyBehavior><a>MyClinicCopilot</a></Link></h1>
+          {/* <h1><Link href="/" legacyBehavior><a>MyClinicCopilot</a></Link></h1> */}
+          <a href="index.html"><img src="assets/img/logo/logo.png" alt="" className="img-fluid" /></a>
         </div>
 
         <nav id="navbar" className="navbar">

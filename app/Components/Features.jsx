@@ -53,7 +53,7 @@ export default function Features() {
                                 </p>
                             </div>
                             <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-1.png" alt="" className="img-fluid" />
+                                <img src="assets/img/services/service-1.jpg" alt="" className="img-fluid" />
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@ export default function Features() {
                                 </p>
                             </div>
                             <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-2.png" alt="" className="img-fluid" />
+                                <img src="assets/img/services/service-2.jpg" alt="" className="img-fluid" />
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@ export default function Features() {
                                 </ul>
                             </div>
                             <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-3.png" alt="" className="img-fluid" />
+                                <img src="assets/img/services/service-3.jpg" alt="" className="img-fluid" />
                             </div>
                         </div>
                     </div>
@@ -111,7 +111,7 @@ export default function Features() {
                                 </p>
                             </div>
                             <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-4.png" alt="" className="img-fluid" />
+                                <img src="assets/img/services/service-4.jpg" alt="" className="img-fluid" />
                             </div>
                         </div>
                     </div>

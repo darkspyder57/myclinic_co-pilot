@@ -112,7 +112,8 @@ h6 {
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 200px;
+  filter: drop-shadow(0 0 0.5rem rgb(5, 239, 239));
 }
 
 /*--------------------------------------------------------------
@@ -348,18 +349,6 @@ h6 {
   background: linear-gradient(0deg, rgb(42, 44, 57) 0%, rgb(51, 54, 74) 100%);
   padding: 0;
 }
-
-/* #slide-1{
-  background-image: url("../img/hero/hero-1.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.5;
-}
-
-#slide-2{
-  background-image: url("../img/hero/hero-2.jpg");
-  opacity: 0.5;
-} */
 
 #hero .carousel-container {
   display: flex;
