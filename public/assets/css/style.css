@@ -1579,3 +1579,12 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+/* ADMIN DASHBOARD */
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
