@@ -84,6 +84,7 @@
     const headerScrolled = () => {
       if (window.scrollY > 100) {
         selectHeader.classList.add('header-scrolled')
+        console.log("header toggled");
       } else {
         selectHeader.classList.remove('header-scrolled')
       }
