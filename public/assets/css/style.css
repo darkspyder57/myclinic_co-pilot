@@ -349,6 +349,18 @@ h6 {
   padding: 0;
 }
 
+/* #slide-1{
+  background-image: url("../img/hero/hero-1.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+#slide-2{
+  background-image: url("../img/hero/hero-2.jpg");
+  opacity: 0.5;
+} */
+
 #hero .carousel-container {
   display: flex;
   justify-content: center;
@@ -357,7 +369,7 @@ h6 {
   text-align: center;
   position: relative;
   height: 70vh;
-  padding-top: 60px;
+  padding: 0px;
 }
 
 #hero h2 {
