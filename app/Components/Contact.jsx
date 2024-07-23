@@ -44,13 +44,13 @@ export default function Contact() {
                     submitButton.classList.remove('success');
                 }, 2000);
                 console.log({
-                    name:name,
+                    name: name,
                     email: email,
                     subject: subject,
                     message: message
                 });
             }
-            else{
+            else {
                 alert("Error");
             }
         } catch (error) {
@@ -67,6 +67,17 @@ export default function Contact() {
                     <h2>Contact</h2>
                     <p>Contact Us</p>
                 </div>
+
+                <div className="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.393215101302!2d73.8919470748195!3d18.556302982544253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c12f701d42c1%3A0xf1f9d29afa080b90!2s91springboard%20Yerwada%2C%20Pune!5e0!3m2!1sen!2sin!4v1696349552517!5m2!1sen!2sin"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    />
+                </div>
+
 
                 <div className="row mt-5">
 
