@@ -1,22 +1,25 @@
 "use client"
 
 
-import { useState } from 'react';
+import { collection, getDocs} from 'firebase/firestore';
+import { useState, useEffect } from 'react';
+import { db } from '../Firebase';
 
 const ContactAdmin = () => {
-  const [contacts, setContacts] = useState([
-    { id: 1, name: 'Mohnish Kumar', email: 'mohnishkumar57@gmail.com', subject: 'Inquiry', message: 'Hello, I have a question.' },
-    { id: 2, name: 'Peter Parker', email: 'peterspiderman@gmail.com', subject: 'Support', message: 'I need help with my account, i cannot access web.' },
-    { id: 3, name: 'Peter Parker', email: 'peterspiderman@gmail.com', subject: 'Support', message: 'I need help with my account, i cannot access web.' }
-  ]);
+  const [contacts, setContacts] = useState([]);
+  const contactRef = collection(db, "contacts");
 
-  const handleUpdate = (id) => {
-    // Handle update logic
-  };
+  useEffect(()=>{
+    const getContacts = async ()=>{
+      const contactData = await getDocs(contactRef);
+      setContacts(contactData.docs.map((doc) => ({...doc.data(), id: doc.id })));
+    };
+    getContacts();
+  });
 
-  const handleDelete = (id) => {
-    setContacts(contacts.filter(contact => contact.id !== id));
-  };
+  // const handleDelete = async(id) => {
+  //   // setContacts(contacts.filter(contact => contact.id !== id));
+  // };
 
   return (
     <div>
@@ -30,8 +33,7 @@ const ContactAdmin = () => {
                 <h6 className="card-subtitle mb-2 text-muted">{contact.email}</h6>
                 <p className="card-text"><strong>Subject:</strong> {contact.subject}</p>
                 <p className="card-text"><strong>Message:</strong> {contact.message}</p>
-                <button className="btn btn-primary me-2" onClick={() => handleUpdate(contact.id)}>Update</button>
-                <button className="btn btn-danger" onClick={() => handleDelete(contact.id)}>Delete</button>
+                <button className="btn btn-danger">Delete</button>
               </div>
             </div>
           </div>
