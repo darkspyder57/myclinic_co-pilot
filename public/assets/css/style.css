@@ -1598,6 +1598,39 @@ section {
   font-size: 13px;
 } 
 
+/*Newsletter*/
+
+/* .newsletter {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+} */
+
+.newsletter-btn{
+  background-color: #ef6603;
+  width: 30%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.newsletter-btn:hover{
+  background-color: #bd5102;
+}
+
+.newsletter-form{
+  outline: 0;
+  border: none;
+}
+
+/* .innercontainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+
+
 
 /* ADMIN DASHBOARD */
 .card {

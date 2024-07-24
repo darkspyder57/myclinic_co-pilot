@@ -1,32 +1,79 @@
 "use client"
 
+import styles from '@/public/assets/css/newsletter.module.css'
 import Link from "next/link"
+import { useState } from 'react';
 export default function Footer() {
-    return (
-        // <!-- ======= Footer ======= -->
-        <footer id="footer">
-            <div className="container">
-                <div className="logo">
-                <Link href="/" legacyBehavior><a><img src="assets/img/logo/logo.png" alt="" className="img-fluid" /></a></Link>
-                </div>
-                
-                <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-                <div className="social-links">
-                    <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
-                    <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
-                    <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
-                    <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
-                    <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
-                </div>
+    const [email, setEmail] = useState("");
 
-                <div className="copyright">
-                    &copy; Copyright <strong><span>Selecao</span></strong>. All Rights Reserved
-                </div>
-                <div className="credits">
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch("api/newsletter", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email}),
+            });
+
+            if (response.ok) {
+                setEmail("");
+                console.log({email: email});
+            }
+            else {
+                alert("Error");
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    return (
+        <footer id="footer" className="py-4">
+            <div className="container">
+                <div className="d-flex flex-column align-items-center">
+                    <div className="innercontainer">
+                        <div className="logo mb-4">
+                            <Link href="/" legacyBehavior>
+                                <a>
+                                    <img src="assets/img/logo/logo.png" alt="Logo" className="img-fluid" />
+                                </a>
+                            </Link>
+                        </div>
+                        <div className={`text-center ${styles.newsletterContainer} mb-4`}>
+                            <p className="fw-bold fs-3">Our newsletter</p>
+                            <p className="fs-6">Stay informed and never miss out on the latest updates with our newsletter subscription</p>
+                            <form onSubmit={handleSubmit} id="newsletterForm" className="form-inline justify-content-center">
+                                <div className="form-group d-flex">
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        className="form-control me-2 newsletter-form"
+                                        id="email"
+                                        placeholder="Enter email"
+                                        required
+                                    />
+                                    <button type="submit" className="newsletter-btn">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div className="social-links text-center mb-3">
+                        <a href="#" className="twitter me-3"><i className="bx bxl-twitter"></i></a>
+                        <a href="#" className="facebook me-3"><i className="bx bxl-facebook"></i></a>
+                        <a href="#" className="instagram me-3"><i className="bx bxl-instagram"></i></a>
+                        <a href="#" className="google-plus me-3"><i className="bx bxl-skype"></i></a>
+                        <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                    </div>
+                    <div className="text-center mt-3">
+                        <p className="mb-1">&copy; Copyright <strong><span>Selecao</span></strong>. All Rights Reserved</p>
+                        <p>Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></p>
+                    </div>
                 </div>
             </div>
-            {/* <!-- End Footer --> */}
         </footer>
 
     )
