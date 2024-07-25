@@ -42,4 +42,6 @@ const AdminDashboard =()=> {
         </>
     )
 }
+
+AdminDashboard.displayName = 'AdminDashboard';
 export default withAuth(AdminDashboard);
