@@ -28,7 +28,6 @@ export const AuthProvider = ({ children }) => {
         }
       } else {
         setUserName(null);
-        router.push("/login");
       }
       setLoading(false);
     });

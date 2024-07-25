@@ -47,7 +47,7 @@ const ContactAdmin = () => {
       ) : (
         <div className="row">
           {contacts.map(contact => (
-            <div className="col-md-6 mb-4" key={contact.id}>
+            <div className="col-12 col-md-6 mb-4" key={contact.id}>
               <div className="card">
                 <div className="card-body">
                   <h5 className="card-title">{contact.name}</h5>
