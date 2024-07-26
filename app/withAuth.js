@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from './context/AuthContext';
 
+
 const withAuth = (WrappedComponent) => {
   const AuthHOC = (props) => {
     const { user, loading } = useAuth();
@@ -13,9 +14,11 @@ const withAuth = (WrappedComponent) => {
       }
     }, [user, loading, router]);
 
-    if (loading || !user) {
+    if (loading || !user ) {
       return <div>Loading...</div>; // You can show a loader or nothing while redirecting
     }
+
+    
 
     return <WrappedComponent {...props} />;
   };

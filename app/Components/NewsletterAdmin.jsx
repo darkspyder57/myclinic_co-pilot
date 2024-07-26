@@ -4,6 +4,7 @@ import { getDocs, collection, deleteDoc, doc, updateDoc } from "firebase/firesto
 import { useState, useEffect } from "react";
 import { db } from "../Firebase";
 
+
 const NewsletterAdmin = () => {
   const [newsletters, setNewsletters] = useState([]);
   const [loading, setLoading] = useState(true);
