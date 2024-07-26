@@ -11,8 +11,8 @@ const Sidebar = ({ setView }) => {
   };
 
   return (
-    <div className="d-flex flex-column p-3 bg-light" style={{ height: '100vh', width: '250px' }}>
-      <h4>Admin Dashboard</h4>
+    <div className="d-flex flex-column p-3 sidebar-panel">
+      <h4 style={{color: "#fff"}}>Admin Dashboard</h4>
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">

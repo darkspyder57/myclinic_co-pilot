@@ -115,7 +115,7 @@ const AdminDashboard =()=> {
 
     return (
         <>
-            <header id="header" className="fixed-top d-flex align-items-center header-transparent bg-dark">
+            <header id="header" className="fixed-top d-flex align-items-center header-transparent bg-light">
                 <div className="container d-flex align-items-center justify-content-between">
                     <div className="logo">
                         <Link href="/" legacyBehavior><a><img src="assets/img/logo/logo.png" alt="" className="img-fluid" /></a></Link>
@@ -125,7 +125,7 @@ const AdminDashboard =()=> {
                         <ul>
                             <li><a className="nav-link scrollto active" style={{cursor: "pointer"}} onClick={logout}>Logout</a></li>
                         </ul>
-                        <i className="bi bi-list mobile-nav-toggle"></i>
+                        <i className="bi bi-list mobile-nav-toggle bg-dark"></i>
                     </nav>
                 </div>
             </header>
