@@ -1,9 +1,8 @@
 "use client";
 
-import { getDocs, collection, deleteDoc, doc, updateDoc } from "firebase/firestore";
+import { getDocs, collection, deleteDoc, doc, updateDoc, Timestamp } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { db } from "../Firebase";
-
 
 const NewsletterAdmin = () => {
   const [newsletters, setNewsletters] = useState([]);
@@ -19,10 +18,11 @@ const NewsletterAdmin = () => {
         const newsletterData = await getDocs(collection(db, "newsletters"));
         const fetchedNewsletters = newsletterData.docs.map((doc) => {
           const data = doc.data();
+          const timestamp = data.timestamp;
           return {
             ...data,
             id: doc.id,
-            date: data.date ? data.date.toDate() : null // Convert Firestore Timestamp to Date
+            subscribedAt: timestamp instanceof Timestamp ? timestamp.toDate() : new Date(timestamp)
           };
         });
         console.log("Fetched Newsletters:", fetchedNewsletters);
@@ -40,7 +40,7 @@ const NewsletterAdmin = () => {
 
   const handleDelete = async (id) => {
     try {
-      const docRef = doc(db, "newsletters", id); // Correctly reference the document
+      const docRef = doc(db, "newsletters", id);
       await deleteDoc(docRef);
       setNewsletters(newsletters.filter(newsletter => newsletter.id !== id));
     } catch (error) {
@@ -52,11 +52,11 @@ const NewsletterAdmin = () => {
   const handleUpdate = async (id) => {
     try {
       const docRef = doc(db, "newsletters", id);
-      await updateDoc(docRef, { email: editEmail }); // Update the email
-      setNewsletters(newsletters.map(newsletter => 
+      await updateDoc(docRef, { email: editEmail });
+      setNewsletters(newsletters.map(newsletter =>
         newsletter.id === id ? { ...newsletter, email: editEmail } : newsletter
       ));
-      setEditingId(null); // Close the editing mode
+      setEditingId(null);
       setEditEmail('');
     } catch (error) {
       console.error("Error updating newsletter:", error);
@@ -82,40 +82,40 @@ const NewsletterAdmin = () => {
           <table className="table table-striped newsletter">
             <thead>
               <tr>
-                <th scope="col"> </th>
+                <th scope="col">#</th>
                 <th scope="col">Email</th>
                 <th scope="col">Date</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
-              {newsletters.map((newsletter) => (
+              {newsletters.map((newsletter, index) => (
                 <tr key={newsletter.id}>
-                  <th scope="row"></th>
+                  <td>{index + 1}</td>
                   <td>
                     {editingId === newsletter.id ? (
-                      <input 
-                        type="text" 
-                        value={editEmail} 
-                        onChange={(e) => setEditEmail(e.target.value)} 
+                      <input
+                        type="text"
+                        value={editEmail}
+                        onChange={(e) => setEditEmail(e.target.value)}
                         placeholder="New email"
                       />
                     ) : (
                       newsletter.email
                     )}
                   </td>
-                  <td>{newsletter.date ? newsletter.date.toLocaleDateString() : 'N/A'}</td>
+                  <td>{newsletter.subscribedAt ? newsletter.subscribedAt.toLocaleDateString() : 'Invalid Date'}</td>
                   <td>
                     {editingId === newsletter.id ? (
                       <>
-                        <button 
-                          onClick={() => handleUpdate(newsletter.id)} 
+                        <button
+                          onClick={() => handleUpdate(newsletter.id)}
                           className="btn btn-outline-success btn-sm"
                         >
                           Save
                         </button>
-                        <button 
-                          onClick={() => setEditingId(null)} 
+                        <button
+                          onClick={() => setEditingId(null)}
                           className="btn btn-outline-secondary btn-sm ms-2"
                         >
                           Cancel
@@ -123,14 +123,14 @@ const NewsletterAdmin = () => {
                       </>
                     ) : (
                       <>
-                        <button 
-                          onClick={() => handleEditClick(newsletter.id, newsletter.email)} 
+                        <button
+                          onClick={() => handleEditClick(newsletter.id, newsletter.email)}
                           className="newsletter-update btn btn-outline-secondary btn-sm"
                         >
                           &#128396;
                         </button>
-                        <button 
-                          onClick={() => handleDelete(newsletter.id)} 
+                        <button
+                          onClick={() => handleDelete(newsletter.id)}
                           className="newsletter-delete btn btn-outline-danger btn-sm"
                         >
                           &#128465;
