@@ -32,6 +32,7 @@ const ContactAdmin = () => {
     try {
       const docRef = doc(db, "contacts", id); // Correctly reference the document
       await deleteDoc(docRef);
+      alert("Enquiry Deleted");
       setContacts(contacts.filter(contact => contact.id !== id));
     } catch (error) {
       console.error("Error deleting contact:", error);
