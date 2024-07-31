@@ -5,7 +5,9 @@ import React, { useState, useEffect, useRef } from "react"
 export default function Contact() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [subject, setSubject] = useState("");
+    const [clinicname, setClinicName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [clinicaddress, setClinicAddress] = useState("");
     const [message, setMessage] = useState("");
     const timeoutRef = useRef(null);
 
@@ -26,14 +28,17 @@ export default function Contact() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ name, email, subject, message }),
+                body: JSON.stringify({ name, email, clinicname, phone, clinicaddress, message }),
             });
 
             if (response.ok) {
                 setName("");
                 setEmail("");
-                setSubject("");
+                setClinicName("");
+                setPhone("");
+                setClinicAddress("");
                 setMessage("");
+
 
                 const submitButton = document.getElementById('submitButton');
                 submitButton.textContent = 'Data Stored Successfully';
@@ -46,7 +51,9 @@ export default function Contact() {
                 console.log({
                     name: name,
                     email: email,
-                    subject: subject,
+                    clinicname: clinicname,
+                    phone: phone,
+                    clinicaddress: clinicaddress,
                     message: message
                 });
             }
@@ -117,9 +124,15 @@ export default function Contact() {
                                 <div className="col-md-6 form-group mt-3 mt-md-0">
                                     <input type="email" value={email} className="form-control" name="email" id="email" placeholder="Your Email" required onChange={(e) => setEmail(e.target.value)} />
                                 </div>
+                                <div className="col-md-6 form-group mt-3 mt-md-0">
+                                    <input type="text" value={clinicname} className="form-control" name="clinicname" id="clinicname" placeholder="Your Clinic Name" required onChange={(e) => setClinicName(e.target.value)} />
+                                </div>
+                                <div className="col-md-6 form-group mt-3 mt-md-0">
+                                    <input type="tel" value={phone} className="form-control" name="phone" id="phone" placeholder="Your Phone Number" required onChange={(e) => setPhone(e.target.value)} />
+                                </div>
                             </div>
                             <div className="form-group mt-3">
-                                <input type="text" value={subject} className="form-control" name="subject" id="subject" placeholder="Subject" required onChange={(e) => setSubject(e.target.value)} />
+                                <input type="text" value={clinicaddress} className="form-control" name="clinicaddress" id="clinicaddress" placeholder="Clinic Address" required onChange={(e) => setClinicAddress(e.target.value)} />
                             </div>
                             <div className="form-group mt-3">
                                 <textarea value={message} className="form-control" name="message" rows="5" placeholder="Message" required onChange={(e) => setMessage(e.target.value)}></textarea>

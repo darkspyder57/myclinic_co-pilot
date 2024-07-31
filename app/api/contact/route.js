@@ -6,13 +6,15 @@ import { transporter } from "@/app/utils/mailSender.utils";
 
 
 export async function POST(req) {
-    const { name, email, subject, message } = await req.json();
+    const { name, email, clinicname, phone, clinicaddress, message } = await req.json();
 
     try {
         const docRef = await addDoc(collection(db, 'contacts'), {
             name,
             email,
-            subject,
+            clinicname,
+            phone,
+            clinicaddress,
             message,
             timestamp: new Date()
         });

@@ -52,7 +52,9 @@ const ContactAdmin = () => {
                 <div className="card-body">
                   <h5 className="card-title">{contact.name}</h5>
                   <h6 className="card-subtitle mb-2 text-muted">{contact.email}</h6>
-                  <p className="card-text"><strong>Subject:</strong> {contact.subject}</p>
+                  <p className="card-text"><strong>Phone:</strong> {contact.phone}</p>
+                  <p className="card-text"><strong>Clinic Name:</strong> {contact.clinicname}</p>
+                  <p className="card-text"><strong>Clinic Address:</strong> {contact.clinicaddress}</p>
                   <p className="card-text"><strong>Message:</strong> {contact.message}</p>
                   <button className="btn btn-danger" onClick={() => handleDelete(contact.id)}>Delete</button>
                 </div>

@@ -67,7 +67,7 @@ export default function Hero() {
         <div className="carousel-item active">
           <div className="carousel-container">
             <h2 className="animate__animated animate__fadeInDown">Welcome to <span>MyClinicCopilot</span></h2>
-            <p className="animate__animated animate__fadeInUp">Do you eat a five course meal with each course served at different restaurants, or at the same restaurant?<br /> No reason your marketing should be handled by 5 different vendors, we deliver integrative digital marketing for you...</p>
+            <p className="animate__animated animate__fadeInUp">Do you eat a five course meal with each course served at different restaurants, or at the same restaurant?</p>
             <a href="#about1" className="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
           </div>
         </div>
