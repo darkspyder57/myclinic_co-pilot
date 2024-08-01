@@ -1748,3 +1748,20 @@ section {
   border-radius: 5px;
   margin-left: -5px;
 }
+
+/*Newsletter Admin*/
+.add-newsletter{
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 10px;
+  background-color: #18d26e;
+  color: white;
+  box-shadow: 1px 2px 3px grey;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.add-newsletter:hover{
+  background-color: #0f9d58;
+}

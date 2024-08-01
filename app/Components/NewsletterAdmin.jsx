@@ -3,6 +3,7 @@
 import { getDocs, collection, deleteDoc, doc, updateDoc, Timestamp } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { db } from "../Firebase";
+import Link from "next/link";
 
 const NewsletterAdmin = () => {
   const [newsletters, setNewsletters] = useState([]);
@@ -74,7 +75,11 @@ const NewsletterAdmin = () => {
 
   return (
     <div>
-      <h2>Newsletter Admin</h2>
+    <div className="d-flex justify-content-between">
+    <h2>Newsletter Admin</h2>
+    <Link href="/addnewsletter"><button className="add-newsletter">Add New Newsletter</button></Link>
+    </div>
+      
       {newsletters.length === 0 ? (
         <div className="text-center">Database is empty</div>
       ) : (
