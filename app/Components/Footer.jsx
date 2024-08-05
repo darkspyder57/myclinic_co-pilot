@@ -69,8 +69,10 @@ export default function Footer() {
                         <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
                     </div>
                     <div className="text-center mt-3">
-                        <p className="mb-1">&copy; Copyright <strong><span>Selecao</span></strong>. All Rights Reserved</p>
-                        <p>Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></p>
+                        <p className="mb-1">&copy; Copyright <strong><span>2024,</span></strong>
+                        {/* <p>, Ideation People Solutions Pvt Ltd</p> */}
+                        </p>
+                        <p>Designed by <a href="https://ideationpeople.com/">Ideation People Solutions Pvt Ltd</a></p>
                     </div>
                 </div>
             </div>
