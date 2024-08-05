@@ -17,7 +17,7 @@ import Script from 'next/script'
 import { AuthProvider } from './context/AuthContext.jsx'
 
 export const metadata = {
-  title: "Selecao Bootstrap Template - Index",
+  title: "My Clinic Co-pilot",
   description: "MyClinic Co-pilot",
   icons:{
     icon: ['./favicon-32x32.png'],
