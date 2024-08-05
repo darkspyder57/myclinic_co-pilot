@@ -19,17 +19,23 @@ export default function Cta() {
                         >
                             <i className="bi bi-envelope-at"></i>
                         </a>
-                        {/* <a
+                        <a
                             href="https://wa.me/+918779300073"
                             className="google-plus cta-btn align-self-start mx-2"
                         >
                             <i className="bi bi-whatsapp"></i>
-                        </a> */}
+                        </a>
                         <a
                             href="https://join.skype.com/invite/uj0JwHpegulz"
                             className="google-plus cta-btn align-self-start mx-2"
                         >
                             <i className="bi bi-skype"></i>
+                        </a>
+                        <a
+                            href="https://tel://+14154753670 "
+                            className="google-plus cta-btn align-self-start mx-2"
+                        >
+                            <i className="bi bi-telephone"></i>
                         </a>
                     </div>
 
